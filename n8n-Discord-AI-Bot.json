@@ -1,0 +1,483 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "17e8bd5e-66a1-45f2-8c6b-d1f43fb2e7b9",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        -1060,
+        180
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "d0cdd428-be96-4821-85bc-65342cf928d0",
+        "options": {}
+      },
+      "id": "a41d7f95-053d-4f3f-a42e-1d6e94ca1f91",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "position": [
+        -1060,
+        40
+      ],
+      "webhookId": "d0cdd428-be96-4821-85bc-65342cf928d0",
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "gpt-4o"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -820,
+        340
+      ],
+      "id": "4584b8cb-be21-44b8-9638-3db68a93dc86",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "89g4HakPaOvmj78S",
+          "name": "OpenAi account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discord.com/api/webhooks/1401622506879717482/8VyJTpLxCRbzeH3Z6uJ2VGyVtcgZUNUQgW_1pGhlcf_R3r2572H783JxIj3MJuq5yYSN",
+        "text": "={{ $json.output.answer }}",
+        "options": {}
+      },
+      "id": "0b69af64-a937-453a-b966-d78f15c2d515",
+      "name": "Chatbot",
+      "type": "n8n-nodes-base.discord",
+      "position": [
+        -140,
+        -100
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Webhook').item.json.body.session_id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -720,
+        340
+      ],
+      "id": "bfe619b5-e5cf-4698-94d6-2046a4c57276",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1n4orJO5-Yedjz9t4hNzdQvWYqq0dPh2nfeUYpwzK9hw",
+          "mode": "list",
+          "cachedResultName": "Logger",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1n4orJO5-Yedjz9t4hNzdQvWYqq0dPh2nfeUYpwzK9hw/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1n4orJO5-Yedjz9t4hNzdQvWYqq0dPh2nfeUYpwzK9hw/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "username": "={{ $('Webhook').item.json.body.user }}",
+            "user_id": "={{ $('Webhook').item.json.body.user_id }}",
+            "channel_id": "={{ $('Webhook').item.json.body.channel_id }}",
+            "feedback": "={{ $('Webhook').item.json.body.feedback }}",
+            "time": "={{ $now.format('MMMM dd, yyyy, tt') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "username",
+              "displayName": "username",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "user_id",
+              "displayName": "user_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "channel_id",
+              "displayName": "channel_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "feedback",
+              "displayName": "feedback",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "time",
+              "displayName": "time",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -240,
+        180
+      ],
+      "id": "0c6ffbb8-06dd-4213-96e5-4bb3a8ed1ab6",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "vQCMgS3vMrJ1VciQ",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        -520,
+        340
+      ],
+      "id": "87175152-32ca-498c-bc20-6329bf421875",
+      "name": "Calculator"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolWikipedia",
+      "typeVersion": 1,
+      "position": [
+        -620,
+        340
+      ],
+      "id": "87080084-1170-4265-9625-1031c0513176",
+      "name": "Wikipedia"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.feedback }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are either helpful assistant that is supposed to help answer any questions that is summarized in under 20 words or a help desk agent that calls for help in under 20 words.\n\nIn the background please analyze this feedback and classify it into one of these categories:\n1. \"help\" for extreme dissatisfaction or an urgent problem. Please assess if the request is really urgent and whether it has an immediate impact on the client. If the ticket doesn't look like an immediate problem or an extreme dissatisfaction then proceed as a normal ticket.\n2. \"ticket\" for everything else. This will be processed as normal.\n\nPlease reply with two **valid JSON objects**. Use the structure:\n{\n  \"output\": \"...\",\n  \"category\": \"...\",\n}\nCategory must match the analysed category. Please be polite and friendly to the colleagues. \n\nMake sure your response is strictly parseable as JSON. ",
+          "maxIterations": 1,
+          "returnIntermediateSteps": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        -740,
+        100
+      ],
+      "id": "1f6463b7-9bec-4488-b7d7-6e6bc13980ab",
+      "name": "My Friend",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "options": {
+          "prompt": "=Instructions:\n--------------\nRead the output given from the AI Agent and split the output and category into two different JSON objects.\n--------------\nCompletion:\n--------------\nCompleted if it contains a split version of the output listed.\n--------------\n\nAbove, the Completion did not satisfy the constraints given in the Instructions.\nError:\n--------------\n{error}\n--------------\n\nPlease try again. Please only respond with an answer that satisfies the constraints laid out in the Instructions:"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserAutofixing",
+      "typeVersion": 1,
+      "position": [
+        -420,
+        340
+      ],
+      "id": "8bc93dad-c1a5-483a-aff2-70a3640eff01",
+      "name": "Auto-fixing Output Parser"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "gpt-4o"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -440,
+        480
+      ],
+      "id": "c4617225-3698-4a88-b606-148f798e09af",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "89g4HakPaOvmj78S",
+          "name": "OpenAi account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n\t\"answer\": \"answer\",\n    \"category\": \"ticket\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -340,
+        480
+      ],
+      "id": "af3f4e57-cb1e-44a4-8f94-f407b67df81b",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "3c0c8b8b-63fd-468d-a48b-063983b36a21",
+              "leftValue": "={{ $json.output.category }}",
+              "rightValue": "ticket",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -360,
+        20
+      ],
+      "id": "a238a3ce-13cb-43eb-8d5e-67c75b1a5718",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discord.com/api/webhooks/1391738916494639237/G0PX0o2ewrzhwlSQCWNcKZjoZxh8TzlllUb66TyRIu8G2Hx7B9pANk4iakC5NhwvHam9",
+        "text": "={{ $json.output.answer }}",
+        "options": {}
+      },
+      "id": "22ba5910-a21b-4b59-bf48-4a3f758c6a78",
+      "name": "Help Desk",
+      "type": "n8n-nodes-base.discord",
+      "position": [
+        -140,
+        40
+      ],
+      "typeVersion": 1
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "My Friend",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "My Friend",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "My Friend",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "My Friend",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chatbot": {
+      "main": [
+        []
+      ]
+    },
+    "Calculator": {
+      "ai_tool": [
+        [
+          {
+            "node": "My Friend",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wikipedia": {
+      "ai_tool": [
+        [
+          {
+            "node": "My Friend",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "My Friend": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Auto-fixing Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "My Friend",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Auto-fixing Output Parser",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Auto-fixing Output Parser",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Chatbot",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Help Desk",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Help Desk": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "versionId": "dddcd790-2ed1-4005-9d0c-73b8fd30265e",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "4efbe447f788174c254b4fa9de530ff426641983f918331efe82b33ec25943f0"
+  },
+  "id": "75heSGveLH3kC3kf",
+  "tags": []
+}
