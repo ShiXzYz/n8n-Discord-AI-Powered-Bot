@@ -10,6 +10,10 @@ Throughout my internship journey during the summer of 2025, I was able to have t
 
 While designing this project, I had also ventured out into exploring other subjects of technology such as networking using POST and PULL requests. 
 
+From utilizing OpenAI, 
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMdM9MEQ0ExL1PmInT3U5I8v63YXBEdoIT0Q&s" width=10%>
+
 ## How to Run
 In order to run the n8n Discord AI-Powered Bot, there are several steps to follow:
 
