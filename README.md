@@ -10,6 +10,7 @@ Throughout my internship journey during the summer of 2025, I was able to have t
 
 While designing this project, I had also ventured out into exploring other subjects of technology such as networking using POST and PULL requests. 
 
+## How to Run
 In order to run the n8n Discord AI-Powered Bot, there are several steps to follow:
 
 1) 
