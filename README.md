@@ -20,8 +20,8 @@ With my interest in cybersecurity, I had additionally constructed a logging mech
 -------
 
 ## How to Run
-In order to run the n8n Discord AI-Powered Bot, there are several steps to follow:
 
+### Docker Setup for n8n self-hosting:
 1) First, it is necessary to make sure everthing is self-hosted on your own device for personal projects that will not be used for business purposes.
 2) In order to host n8n, it is required to download and install docker onto your device.
 
@@ -33,7 +33,8 @@ In order to run the n8n Discord AI-Powered Bot, there are several steps to follo
 5) Something similar to this should show up on your Docker Desktop application:
         <img width="2488" height="804" alt="image" src="https://github.com/user-attachments/assets/cf9878e0-98f4-416b-b8e8-fccb389e003d" />
 
-
+### Discord Bot Setup:
+### Working in n8n:
 
 ## What Did I Learn?
 
