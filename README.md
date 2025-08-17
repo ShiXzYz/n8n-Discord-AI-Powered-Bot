@@ -17,6 +17,8 @@ With my interest in cybersecurity, I had additionally constructed a logging mech
 
 <img width="1200" height="400" alt="image" src="https://github.com/user-attachments/assets/6086ff2b-20ef-40f7-a3f5-6a075b88d223" />
 
+-------
+
 ## How to Run
 In order to run the n8n Discord AI-Powered Bot, there are several steps to follow:
 
