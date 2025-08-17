@@ -12,9 +12,11 @@ While designing this project, I had also ventured out into exploring various sub
 
 From utilizing OpenAI, I managed to design an AI Agent that acted as a chatbot for any of the user's questions. While the chatbot was able to respond, there was also another feature where the AI would determine if the user needed actual help from one of the moderators in the Discord server or was just querying to the bot. 
 
-With my interest in cybersecurity, I had constructed a logging mechanism that was linked to Google Cloud services such as Google Sheets. In the file, the AI Agent would create a formatted row of [username, user_id, channel_id, feedback, and time (during the query)]. 
+<img src="https://pngimg.com/uploads/chatgpt/chatgpt_PNG1.png" width=10%> <img src="https://play-lh.googleusercontent.com/RyoQTmHnxsxPYabsETmWVXHtLorVh_yOO48hsdv2VmI-Uki4qt5c5vV1cicJODV56A4" width=10%>
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMdM9MEQ0ExL1PmInT3U5I8v63YXBEdoIT0Q&s" width=10%>
+With my interest in cybersecurity, I had additionally constructed a logging mechanism that was linked to Google Cloud services such as Google Sheets. In the file, the AI Agent would create a formatted row of [username, user_id, channel_id, feedback, and time (during the query)] and then append that row directly onto the Google Sheets that I had connected called: Logger.
+
+<img width="1200" height="400" alt="image" src="https://github.com/user-attachments/assets/6086ff2b-20ef-40f7-a3f5-6a075b88d223" />
 
 ## How to Run
 In order to run the n8n Discord AI-Powered Bot, there are several steps to follow:
