@@ -24,10 +24,16 @@ In order to run the n8n Discord AI-Powered Bot, there are several steps to follo
 
 1) First, it is necessary to make sure everthing is self-hosted on your own device for personal projects that will not be used for business purposes.
 2) In order to host n8n, it is required to download and install docker onto your device.
-    - <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCAJH4R87uV3Rvncs3L3urjeNESAfJGTMTrA&s" width=5%>
-3) Use these commands in your terminal or command line (project directory):
+
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCAJH4R87uV3Rvncs3L3urjeNESAfJGTMTrA&s" width=5%/>
+   
+4) Use these commands in your terminal or command line (project directory):
     - ```docker volume create n8n_data```
     - ```docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n```
+5) Something similar to this should show up on your Docker Desktop application:
+        <img width="2488" height="804" alt="image" src="https://github.com/user-attachments/assets/cf9878e0-98f4-416b-b8e8-fccb389e003d" />
+
+
 
 ## What Did I Learn?
 
