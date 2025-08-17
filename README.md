@@ -1,8 +1,7 @@
 # n8n-Discord-AI-Powered-Bot
 <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/N8n-logo-new.svg" width="38%"><img src="https://www.freeiconspng.com/thumbs/plus-icon/plus-icon-black-2.png" width="15%"><img src="https://1000logos.net/wp-content/uploads/2021/06/Discord-logo.png" width="30%">
-
-
 ## Created By: Brian Ryu
+-------
 
 ## What I Accomplished
 
