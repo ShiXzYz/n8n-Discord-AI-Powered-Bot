@@ -32,6 +32,10 @@ With my interest in cybersecurity, I had additionally constructed a logging mech
     - ```docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n```
 5) Something similar to this should show up on your Docker Desktop application:
         <img width="2488" height="804" alt="image" src="https://github.com/user-attachments/assets/cf9878e0-98f4-416b-b8e8-fccb389e003d" />
+6) Once this shows up, you are good to go by using the link to get into n8n:
+
+   <img width="267" height="102" alt="Screenshot 2025-08-17 at 7 20 37 PM" src="https://github.com/user-attachments/assets/20c99d33-660c-4f98-8586-94ba0ce165d3" />
+
 
 ### Discord Bot Setup:
 ### Working in n8n:
