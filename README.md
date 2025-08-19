@@ -27,22 +27,27 @@ With my interest in cybersecurity, I had additionally constructed a logging mech
 
    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCAJH4R87uV3Rvncs3L3urjeNESAfJGTMTrA&s" width=5%/>
    
-4) Use these commands in your terminal or command line (project directory):
+3) Use these commands in your terminal or command line (project directory):
     - ```docker volume create n8n_data```
     - ```docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n```
-5) Something similar to this should show up on your Docker Desktop application:
+4) Something similar to this should show up on your Docker Desktop application:
         <img width="2488" height="804" alt="image" src="https://github.com/user-attachments/assets/cf9878e0-98f4-416b-b8e8-fccb389e003d" />
-6) Once this shows up, you are good to go by using the link to get into n8n:
+5) Once this shows up, you are good to go by using the link to get into n8n:
 
    <img width="267" height="102" alt="Screenshot 2025-08-17 at 7 20 37 PM" src="https://github.com/user-attachments/assets/20c99d33-660c-4f98-8586-94ba0ce165d3" />
 
 ### Working in n8n:
-1) From getting into n8n by self-hosting through the terminal or command line, I was able to create a project using the tools that n8n provided as well as implementing various essential factors such as API keys, webhooks, and etc. 
+1) From getting into n8n by self-hosting through the terminal or command line, I was able to create a project using the tools that n8n provided as well as implementing various essential factors such as API keys, webhooks, and etc.
+
 <img width="1313" height="750" alt="Screenshot 2025-08-18 at 6 05 49 PM" src="https://github.com/user-attachments/assets/d9271fdd-d360-4449-9965-a257f683a579" />
-2) The main element to point out at from this project is the AI Agent named "My Friend". This AI node is the heart of the project that I have created. From containing both 
 
+2) The main element to point out at from this project is the AI Agent named "My Friend". This AI node is the heart of the project that I have created:
+   - In my case, I had used the OpenAI Chat Model and applied a simple memory storage so that the AI Agent will continue to remember and save past conversations to help answer upcoming queries.
+   - There are also options for more tools in order to help the AI Agent optimize the information that it is trying to fetch. As shown in the image, there is a Wikipedia and a Calculator tool that is extended from the node which will call these whenever the query contains related information such as math calculations or general definitions, etc.
+   - The last part in this feature is the Output Parser. This is an optional format for making sure that the AI Agent's response is in the exact format that the user needs so that the data can continue on being used or manipulated for the remainder of the project workflow.
 
-
+3) 
+   
 ### Discord Bot Setup:
 1) 
 
