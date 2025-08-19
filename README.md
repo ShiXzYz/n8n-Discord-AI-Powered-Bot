@@ -37,8 +37,9 @@ With my interest in cybersecurity, I had additionally constructed a logging mech
    <img width="267" height="102" alt="Screenshot 2025-08-17 at 7 20 37 PM" src="https://github.com/user-attachments/assets/20c99d33-660c-4f98-8586-94ba0ce165d3" />
 
 ### Working in n8n:
-1) From getting into n8n by self-hosting through the terminal or command line, it is then possible to create a project like mine:
+1) From getting into n8n by self-hosting through the terminal or command line, I was able to create a project using the tools that n8n provided as well as implementing various essential factors such as API keys, webhooks, and etc. 
 <img width="1313" height="750" alt="Screenshot 2025-08-18 at 6 05 49 PM" src="https://github.com/user-attachments/assets/d9271fdd-d360-4449-9965-a257f683a579" />
+2) The main element to point out at from this project is the AI Agent named "My Friend". 
 
 
 
