@@ -57,6 +57,7 @@ With my interest in cybersecurity, I had additionally constructed a logging mech
 
      <img width="450" height="300" alt="image" src="https://github.com/user-attachments/assets/5c999a07-4d43-478c-9357-2f1a367a224b" />
 
+-------
 
 ## What Did I Learn?
 
