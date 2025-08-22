@@ -46,14 +46,21 @@ With my interest in cybersecurity, I had additionally constructed a logging mech
    - There are also options for more tools in order to help the AI Agent optimize the information that it is trying to fetch. As shown in the image, there is a Wikipedia and a Calculator tool that is extended from the node which will call these whenever the query contains related information such as math calculations or general definitions, etc.
    - The last part in this feature is the Output Parser. This is an optional format for making sure that the AI Agent's response is in the exact format that the user needs so that the data can continue on being used or manipulated for the remainder of the project workflow.
 
-3) 
-   
-### Discord Bot Setup:
-1) 
+     <img width="720" height="270" alt="image" src="https://github.com/user-attachments/assets/2f3de494-7bf1-4cdf-b212-d94202f806dd" />
+
+4) There are two parts to the last and final portion of my project's design:
+   - **First**, the logging mechanism. After setting up a project using the Google Cloud account, it is possible to link the project with n8n using the OAuth2 API key. By doing so, sending any features such as create, delete, or insert from n8n to Google Cloud, it will be an execute that job in an automated process from start to finish.
+
+     <img src="https://cdn.worldvectorlogo.com/logos/google-sheets-full-logo-1.svg" width=300 height=100>
+
+   - **Second**, the help identifier. This was actually set up inside of the AI Agent node with a query stating that it should output a specific JSON format with decision in the category block. This allows for the _if_ statement to determine if the resulting answer should be sent in the normal conversation channel or the help desk. 
+
+     <img width="450" height="300" alt="image" src="https://github.com/user-attachments/assets/5c999a07-4d43-478c-9357-2f1a367a224b" />
+
 
 ## What Did I Learn?
 
-* 
+Throughout this internship, I was able to gain a meaningful experience with AI and the tools that it offers. With technology constantly improving at an unpredictable rate, I strongly believe that it will be important to continue to work with AI and have the skills to utilize and manage them to its full potential. 
 
 ## Issues/Things to Improve Upon
 
