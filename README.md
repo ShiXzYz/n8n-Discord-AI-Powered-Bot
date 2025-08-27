@@ -57,11 +57,24 @@ With my interest in cybersecurity, I had additionally constructed a logging mech
 
      <img width="450" height="300" alt="image" src="https://github.com/user-attachments/assets/5c999a07-4d43-478c-9357-2f1a367a224b" />
 
+#### Example:
+
+Discord bot input: *(error when POST request discord bot is offline when stopped hosting)*
+
+<img width="867" height="317" alt="image" src="https://github.com/user-attachments/assets/8ff546ef-1b2f-4aed-aa14-0296c303e29e" />
+
+Discord bot output:
+
+<img width="858" height="88" alt="Screenshot 2025-08-27 at 2 33 23 PM" src="https://github.com/user-attachments/assets/b464c4ca-e311-45d5-a146-ac0b37d537b5" />
+
+
 -------
 
 ## What Did I Learn?
 
 Throughout this internship, I was able to gain a meaningful experience with AI and the tools that it offers. With technology constantly improving at an unpredictable rate, I strongly believe that it will be important to continue to work with AI and have the skills to utilize and manage them to its full potential. 
+
+Rather than letting AI take over existing jobs, I am now an individual who is not only able to **use** AI for automation or creating efficient tasks, but an individual who has the solid foundational knowledge of what and how exactly everyone comes together and functions as a whole.
 
 ## Issues/Things to Improve Upon
 
